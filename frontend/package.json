@@ -1,22 +1,23 @@
 {
-  "name": "waleska-frontend",
+  "name": "waleska-imoveis",
   "version": "1.0.0",
   "private": true,
+  "description": "Site institucional da Waleska Imóveis - Corretora de imóveis",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "@vitejs/plugin-react": "^4.7.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
+    "vite": "^4.3.9",
     "tailwindcss": "^3.3.2",
-    "vite": "^4.3.9"
+    "postcss": "^8.4.21",
+    "autoprefixer": "^10.4.14"
   }
 }
