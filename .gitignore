@@ -1,5 +1,3 @@
-# arquivo: .gitignore
-
 # Python
 __pycache__/
 *.py[cod]
@@ -17,14 +15,12 @@ venv/
 # Node.js / Vite / React
 node_modules/
 dist/
+.vite/
 package-lock.json
 npm-debug.log*
 yarn.lock
 .pnpm-debug.log
 .DS_Store
 
-# Vite
-.vite/
-
-# Output do build (caso queira manter separado)
+# Output do build extra (caso use)
 build/

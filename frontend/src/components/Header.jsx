@@ -1,6 +1,6 @@
 // src/components/Header.jsx
 
-import React from 'react'
+import React from 'react';
 
 const Header = () => {
   return (
@@ -8,7 +8,11 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src="/images/logo.png" alt="Logo da Waleska Imóveis" className="h-20 w-auto" />
+          <img
+            src="/images/logo.png"
+            alt="Logo da Waleska Imóveis"
+            className="max-h-20 w-auto object-contain"
+          />
           <span className="text-xl font-semibold">Waleska Imóveis</span>
         </div>
 
@@ -21,7 +25,7 @@ const Header = () => {
         </nav>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
