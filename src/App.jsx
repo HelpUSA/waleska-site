@@ -22,11 +22,6 @@ function App() {
   return (
     <Router>
       <div>
-        {/* ✅ Renderização de teste no topo */}
-        <div className="text-center text-2xl font-bold text-blue-600 mt-10">
-          Waleska Imóveis — Teste de Renderização
-        </div>
-
         <Header />
 
         <Routes>
