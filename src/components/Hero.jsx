@@ -16,23 +16,25 @@ const Hero = () => (
       Seu navegador não suporta vídeo em HTML5.
     </video>
 
-    {/* Texto central sobre o vídeo */}
-    <div className="absolute inset-0 bg-black bg-opacity-60 z-10 flex items-center justify-center px-6">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Waleska Santos - Imóveis</h1>
-        <p className="text-xl">
+    {/* Sobreposição escura */}
+    <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+
+    {/* Conteúdo com imagem e texto */}
+    <div className="relative z-20 flex flex-col md:flex-row items-center justify-center h-full px-6">
+      {/* Imagem de Waleska */}
+      <img
+        src="/images/waleska-chaves.png"
+        alt="Waleska segurando uma chave"
+        className="max-h-[400px] md:max-h-[500px] w-auto object-contain drop-shadow-xl"
+      />
+
+      {/* Texto ao lado */}
+      <div className="md:ml-10 text-center md:text-left mt-6 md:mt-0">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">Waleska Santos - Imóveis</h1>
+        <p className="text-lg md:text-xl">
           Excelência em atendimento e os melhores imóveis da região
         </p>
       </div>
-    </div>
-
-    {/* Imagem da Waleska posicionada sobre o vídeo */}
-    <div className="absolute bottom-0 right-0 z-20 p-4 max-w-[180px] md:max-w-[250px]">
-      <img
-        src="/images/logo.png"
-        alt="Waleska segurando chave"
-        className="w-full object-contain drop-shadow-2xl"
-      />
     </div>
   </section>
 )
