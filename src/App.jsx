@@ -1,55 +1,54 @@
-// 📄 frontend/src/App.jsx
+// 📄 src/App.jsx
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Header from './components/Header';
+import Home from './pages/Home';
+import Sobre from './pages/Sobre';
+import Servicos from './pages/Servicos';
+import Contato from './pages/Contato';
+import Footer from './components/Footer';
+import WhatsappIcon from './components/WhatsappIcon';
 
-// 🔹 Componentes principais
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Sobre from './components/Sobre'
-import Diferenciais from './components/Diferenciais'
-import Empreendimentos from './components/Empreendimentos'
-import Contato from './components/Contato'
-import Footer from './components/Footer'
-import WhatsappIcon from './components/WhatsappIcon'
+const TITLES = {
+  '/': 'Início',
+  '/sobre': 'Sobre',
+  '/servicos': 'Serviços',
+  '/contato': 'Contato',
+};
 
-// 🔹 Páginas de imóveis
-import Listaimoveis from './pages/imoveis/Listaimoveis'
-import Detalheimovel from './pages/imoveis/Detalheimovel'
-import Cadastroimovel from './pages/imoveis/Cadastroimovel'
+function TitleAndScroll() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const base = 'Dra. Kátia Xavier';
+    const section = TITLES[location.pathname] || 'Início';
+    document.title = `${section} • ${base}`;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [location.pathname]);
+
+  return null;
+}
 
 function App() {
   return (
     <Router>
-      <div>
+      <TitleAndScroll />
+      <div className="min-h-screen flex flex-col">
         <Header />
-
-        <Routes>
-          {/* Página inicial */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <Sobre />
-                <Diferenciais />
-                <Empreendimentos />
-                <Contato />
-              </>
-            }
-          />
-
-          {/* Rotas de imóveis */}
-          <Route path="/imoveis" element={<Listaimoveis />} />
-          <Route path="/imoveis/:id" element={<Detalheimovel />} />
-          <Route path="/admin/novo-imovel" element={<Cadastroimovel />} />
-        </Routes>
-
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/servicos" element={<Servicos />} />
+            <Route path="/contato" element={<Contato />} />
+          </Routes>
+        </div>
         <Footer />
         <WhatsappIcon />
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

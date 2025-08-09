@@ -1,53 +1,57 @@
-// src/components/Header.jsx
-
-import React, { useState } from 'react'
+// ============================================================================
+// arquivo: src/components/Header.jsx (menu com 3 tracinhos mobile)
+// ----------------------------------------------------------------------------
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
-
+  const [open, setOpen] = useState(false);
+  
   return (
-    <header className="bg-[#472524] bg-opacity-90 text-white fixed top-0 left-0 w-full z-50 shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <img
-            src="/images/logo.png"
-            alt="Logo da Waleska Imóveis"
-            className="h-16 w-auto object-contain"
-          />
-          <span className="text-xl font-semibold">Waleska Imóveis</span>
-        </div>
-
-        {/* Botão do menu para mobile */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-white focus:outline-none"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur border-b">
+      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        
+        {/* Logo e nome */}
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/images/logo-katia.png" alt="Logo Dra. Kátia" className="h-8" />
+          <span className="font-semibold">Dra. Kátia Xavier</span>
+        </Link>
 
         {/* Menu desktop */}
-        <nav className="hidden md:flex space-x-6 text-sm font-medium">
-          <a href="#home" className="hover:text-teal-300">Início</a>
-          <a href="#sobre" className="hover:text-teal-300">Sobre</a>
-          <a href="#empreendimentos" className="hover:text-teal-300">Empreendimentos</a>
-          <a href="#contato" className="hover:text-teal-300">Contato</a>
+        <nav className="hidden md:flex items-center gap-6">
+          <Link to="/" className="hover:underline">Início</Link>
+          <Link to="/sobre" className="hover:underline">Sobre</Link>
+          <Link to="/servicos" className="hover:underline">Serviços</Link>
+          <Link to="/contato" className="hover:underline">Contato</Link>
+          {/* Link invisível apenas para manter o caminho do vídeo no build */}
+          <a href="/videos/background.mp4" className="hidden">placeholder</a>
         </nav>
+
+        {/* Botão hamburger (mobile) */}
+        <button
+          className="md:hidden flex flex-col justify-center items-center"
+          onClick={() => setOpen(!open)}
+          aria-label="Abrir menu"
+        >
+          <span className="block w-6 h-[2px] bg-slate-900 mb-1"></span>
+          <span className="block w-6 h-[2px] bg-slate-900 mb-1"></span>
+          <span className="block w-6 h-[2px] bg-slate-900"></span>
+        </button>
       </div>
 
-      {/* Menu mobile (dropdown) */}
-      {menuOpen && (
-        <div className="md:hidden bg-[#472524] bg-opacity-95 text-white px-4 pb-4 space-y-2">
-          <a href="#home" className="block hover:text-teal-300">Início</a>
-          <a href="#sobre" className="block hover:text-teal-300">Sobre</a>
-          <a href="#empreendimentos" className="block hover:text-teal-300">Empreendimentos</a>
-          <a href="#contato" className="block hover:text-teal-300">Contato</a>
+      {/* Menu mobile */}
+      {open && (
+        <div className="md:hidden border-t bg-white">
+          <div className="px-4 py-3 flex flex-col">
+            <Link to="/" onClick={() => setOpen(false)} className="py-2">Início</Link>
+            <Link to="/sobre" onClick={() => setOpen(false)} className="py-2">Sobre</Link>
+            <Link to="/servicos" onClick={() => setOpen(false)} className="py-2">Serviços</Link>
+            <Link to="/contato" onClick={() => setOpen(false)} className="py-2">Contato</Link>
+          </div>
         </div>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
