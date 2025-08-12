@@ -1,8 +1,8 @@
-// ============================================================================
+﻿// ============================================================================
 // arquivo: src/components/ContatoForm.jsx
 // ----------------------------------------------------------------------------
 import React from 'react';
-import data from '../content/katia.js'; // trocado de .json para .js
+import data from '../content/waleska.js'; // trocado de .json para .js
 
 const ContatoForm = () => (
   <section id="contato" className="py-16 px-6 max-w-4xl mx-auto">
@@ -44,7 +44,7 @@ const ContatoForm = () => (
           >
             @katia_xavierduarte
           </a>{' '}
-          •{' '}
+          â€¢{' '}
           <a
             className="underline"
             href={data.contato.instagram_projeto}
@@ -55,7 +55,7 @@ const ContatoForm = () => (
           </a>
         </p>
         <p>
-          <strong>Endereço:</strong> {data.contato.endereco}
+          <strong>EndereÃ§o:</strong> {data.contato.endereco}
         </p>
       </div>
       <a

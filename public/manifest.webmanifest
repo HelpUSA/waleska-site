@@ -1,13 +1,21 @@
 {
-  "name": "Dra. Kátia Xavier",
-  "short_name": "Dra. Kátia",
+  "name": "Waleska Imóveis",
+  "short_name": "Waleska",
+  "description": "Portal de imóveis - Waleska Imóveis",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0f172a",
+  "theme_color": "#083a35",
   "icons": [
-    { "src": "/favicon.ico", "sizes": "16x16 32x32 48x48 64x64", "type": "image/x-icon" },
-    { "src": "/images/logo-katia.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/images/logo-katia.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "/images/waleska-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/waleska-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }

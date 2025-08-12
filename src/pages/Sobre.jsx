@@ -1,63 +1,72 @@
-// ============================================================================
+﻿// ============================================================================
 // arquivo: src/pages/Sobre.jsx
 // ----------------------------------------------------------------------------
-import React from 'react';
-import data from '../content/katia.js'; // trocado de .json para .js
+import React from "react";
+import data from "../content/waleska.js";
 
-const Linha = ({ label, children }) => (
-  <p className="mb-2">
-    <span className="font-semibold">{label}: </span>
-    {children}
-  </p>
-);
+export default function Sobre() {
+  const nome = data?.nomePublico ?? "Waleska Santos - Imóveis";
+  const resumo =
+    data?.resumo ??
+    "Atendimento imobiliário completo com foco em transparência e resultado.";
+  const creci = data?.registro?.creci || null;
 
-const Sobre = () => (
-  <div className="max-w-3xl mx-auto px-6 py-16">
-    <h1 className="text-3xl font-bold mb-4">Sobre</h1>
-    <p className="mb-6">{data.resumo}</p>
+  const whatsappDisplay = data?.contato?.whatsapp || null;
+  const whatsappHref =
+    data?.contato?.whatsapp_link ||
+    (whatsappDisplay ? `https://wa.me/${whatsappDisplay.replace(/\D/g, "")}` : "#");
+  const email = data?.contato?.email || null;
+  const instagram = data?.contato?.instagram || null;
 
-    <h2 className="text-2xl font-semibold mt-8 mb-3">Formação</h2>
-    {data.educacao?.map((e, i) => (
-      <div key={i} className="mb-4">
-        <Linha label="Instituição">{e.instituicao}</Linha>
-        <Linha label="Curso">{e.curso}</Linha>
-        <Linha label="Período">
-          {new Date(e.inicio).toLocaleDateString()} –{' '}
-          {new Date(e.conclusao).toLocaleDateString()}
-        </Linha>
-      </div>
-    ))}
+  return (
+    <main id="sobre" className="pt-24 pb-16 px-6 max-w-5xl mx-auto">
+      <header className="mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold">{nome}</h1>
+        {creci && <p className="text-slate-600 mt-1">{creci}</p>}
+      </header>
 
-    <h2 className="text-2xl font-semibold mt-8 mb-3">Experiência</h2>
-    {data.experiencia?.map((x, i) => (
-      <div key={i} className="mb-4">
-        <Linha label="Instituição">{x.instituicao}</Linha>
-        <Linha label="Cargo">{x.cargo}</Linha>
-        <Linha label="Período">
-          {new Date(x.inicio).toLocaleDateString()} –{' '}
-          {x.fim ? new Date(x.fim).toLocaleDateString() : 'Atual'}
-        </Linha>
-        <Linha label="Duties (EN)">{x.duties_en}</Linha>
-      </div>
-    ))}
+      <section className="prose max-w-none">
+        <p className="text-lg text-slate-800">{resumo}</p>
 
-    <h2 className="text-2xl font-semibold mt-8 mb-3">Empresa Própria</h2>
-    <div className="mb-4">
-      <Linha label="Nome Fantasia">{data.empresa.nome_fantasia}</Linha>
-      <Linha label="Razão Social">{data.empresa.razao_social}</Linha>
-      <Linha label="CNPJ">{data.empresa.cnpj}</Linha>
-      <Linha label="Abertura">
-        {new Date(data.empresa.abertura).toLocaleDateString()}
-      </Linha>
-      <Linha label="Situação">{data.empresa.situacao}</Linha>
-      <Linha label="Endereço">{data.empresa.endereco}</Linha>
-    </div>
+        {Array.isArray(data?.especialidades) && data.especialidades.length > 0 && (
+          <>
+            <h2 className="text-2xl font-semibold mt-8">Especialidades</h2>
+            <ul className="list-disc pl-6">
+              {data.especialidades.map((e, i) => (
+                <li key={i}>{e}</li>
+              ))}
+            </ul>
+          </>
+        )}
 
-    <p className="text-sm text-slate-500 mt-8">
-      *Por privacidade, dados sensíveis não são exibidos publicamente sem
-      consentimento explícito.
-    </p>
-  </div>
-);
-
-export default Sobre;
+        <h2 className="text-2xl font-semibold mt-8">Contato</h2>
+        <ul className="space-y-2">
+          {whatsappDisplay && (
+            <li>
+              WhatsApp:{" "}
+              <a className="text-emerald-700 underline" href={whatsappHref} target="_blank" rel="noreferrer">
+                {whatsappDisplay}
+              </a>
+            </li>
+          )}
+          {email && (
+            <li>
+              E-mail:{" "}
+              <a className="text-emerald-700 underline" href={`mailto:${email}`}>
+                {email}
+              </a>
+            </li>
+          )}
+          {instagram && (
+            <li>
+              Instagram:{" "}
+              <a className="text-emerald-700 underline" href={instagram} target="_blank" rel="noreferrer">
+                {instagram}
+              </a>
+            </li>
+          )}
+        </ul>
+      </section>
+    </main>
+  );
+}

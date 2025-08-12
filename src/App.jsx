@@ -21,9 +21,9 @@ function TitleAndScroll() {
   const location = useLocation();
 
   useEffect(() => {
-    const base = 'Dra. Kátia Xavier';
+    const BASE_TITLE = 'Waleska Santos - Imóveis';
     const section = TITLES[location.pathname] || 'Início';
-    document.title = `${section} • ${base}`;
+    document.title = `${section} • ${BASE_TITLE}`;
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
 

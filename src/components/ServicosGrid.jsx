@@ -1,20 +1,25 @@
-// ============================================================================
-// arquivo: src/components/ServicosGrid.jsx
-// ----------------------------------------------------------------------------
-import React from 'react';
-import data from '../content/katia.js'; // trocado de .json para .js
+﻿// src/components/ServicosGrid.jsx
+import React from "react";
 
-const ServicosGrid = () => (
-  <section id="servicos" className="py-16 px-6 max-w-6xl mx-auto">
-    <h2 className="text-3xl font-bold mb-8 text-center">Serviços</h2>
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {data.servicos.map((s, i) => (
-        <div key={i} className="rounded-2xl shadow p-6 bg-white">
-          <h3 className="text-xl font-semibold mb-2">{s.titulo}</h3>
-          <p className="text-slate-600">{s.descricao}</p>
-        </div>
+export default function ServicosGrid({ servicos = [] }) {
+  if (!Array.isArray(servicos)) {
+    console.warn("ServicosGrid: 'servicos' não é array:", servicos);
+    servicos = [];
+  }
+
+  return (
+    <section className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      {servicos.map((s, i) => (
+        <article key={s.id ?? i} className="p-4 rounded-xl border">
+          <h3 className="font-semibold">{s.titulo}</h3>
+          {s.descricao && <p className="text-sm opacity-80">{s.descricao}</p>}
+          {s.link && (
+            <a className="text-blue-600 underline mt-2 inline-block" href={s.link}>
+              Saiba mais
+            </a>
+          )}
+        </article>
       ))}
-    </div>
-  </section>
-);
-export default ServicosGrid;
+    </section>
+  );
+}
