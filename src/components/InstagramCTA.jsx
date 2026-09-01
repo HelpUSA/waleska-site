@@ -1,27 +1,37 @@
-// 📄 src/components/InstagramCTA.jsx
 import React from "react";
 import { FaInstagram } from "react-icons/fa";
-import data from "../content/waleska";
 
-export default function InstagramCTA() {
-  const url = data?.redes?.instagram;
+const InstagramCTA = ({ t }) => {
   return (
-    <section className="py-10 px-6 max-w-6xl mx-auto">
-      <div className="rounded-2xl border shadow-sm p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 bg-white">
-        <FaInstagram className="text-4xl" />
-        <div className="flex-1 text-center md:text-left">
-          <h2 className="text-2xl font-semibold">Siga no Instagram</h2>
-          <p className="text-slate-600">Acompanhe os imóveis mais recentes, vídeos e oportunidades.</p>
+    <section className="py-14 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-700 text-white">
+      <div className="max-w-4xl mx-auto px-4 text-center space-y-6">
+        <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mx-auto text-3xl shadow-lg">
+          <FaInstagram />
         </div>
-        <a
-          href={url}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-block bg-black text-white px-5 py-3 rounded-xl hover:opacity-90"
-        >
-          Abrir @imoveis.waleskasantos
-        </a>
+
+        <div className="space-y-2">
+          <h2 className="text-2xl md:text-3xl font-serif font-extrabold">
+            {t.instagram.titulo}
+          </h2>
+          <p className="text-white/90 text-sm max-w-xl mx-auto leading-relaxed">
+            {t.instagram.desc}
+          </p>
+        </div>
+
+        <div>
+          <a
+            href="https://www.instagram.com/imoveis.waleskasantos/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 bg-white text-slate-900 font-extrabold px-8 py-3.5 rounded-2xl shadow-xl hover:bg-slate-100 transition text-sm"
+          >
+            <FaInstagram className="text-pink-600 text-lg" />
+            {t.instagram.botao}
+          </a>
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default InstagramCTA;
