@@ -31,7 +31,7 @@ const Header = ({ lang, setLang, t }) => {
             <div className="flex items-center gap-2">
               <span className="font-serif font-extrabold text-slate-900 text-lg tracking-tight">Waleska Santos</span>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-300 font-mono">
-                CRECI 8492-F
+                CRECI 9962-F
               </span>
             </div>
             <p className="text-[10px] text-slate-500 font-medium tracking-wider uppercase">

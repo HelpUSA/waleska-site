@@ -34,7 +34,7 @@ const AdminModal = ({ isOpen, onClose, properties, setProperties, user, setUser 
       setUser({
         name: "Waleska Santos",
         email: email || "contato@waleska.com.br",
-        creci: "CRECI 8492-F PB",
+        creci: "CRECI 9962-F PB • CNAI 32415",
         role: "CORRETOR"
       });
     } else {
