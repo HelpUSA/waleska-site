@@ -57,8 +57,8 @@ const Footer = ({ t, onOpenAdmin }) => {
               <p className="flex items-center gap-2 text-slate-300">
                 <FaMapMarkerAlt className="text-amber-400" /> Cabo Branco / Jardim Oceania - JP
               </p>
-              <p className="flex items-center gap-2 text-emerald-400 font-bold">
-                <FaWhatsapp /> (83) 9962-9962
+              <p className="flex items-center gap-2 text-emerald-400 font-bold font-mono">
+                <FaWhatsapp /> (83) 98770-8002
               </p>
               <p className="flex items-center gap-2 text-slate-300">
                 <FaEnvelope className="text-amber-400" /> contato@waleska.com.br

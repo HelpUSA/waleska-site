@@ -62,7 +62,7 @@ const Hero = ({ t }) => {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
           <a
-            href="https://wa.me/558399629962?text=Olá%20Waleska!%20Vim%20pelo%20site%20waleska.helpusbr.com."
+            href="https://wa.me/5583987708002?text=Olá%20Waleska!%20Vim%20pelo%20site%20waleska.helpusbr.com."
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-7 py-3.5 rounded-2xl shadow-lg shadow-emerald-600/20 transition-all text-sm"

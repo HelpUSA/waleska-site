@@ -200,7 +200,7 @@ const Anuncios = ({ t, properties = [] }) => {
             {/* Modal Actions */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a
-                href={`https://wa.me/558399629962?text=Olá%20Waleska!%20Gostaria%20de%20mais%20informações%20sobre%20o%20imóvel:%20${encodeURIComponent(selectedProperty.titulo)}`}
+                href={`https://wa.me/5583987708002?text=Olá%20Waleska!%20Gostaria%20de%20mais%20informações%20sobre%20o%20imóvel:%20${encodeURIComponent(selectedProperty.titulo)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex-1 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-xs text-center flex items-center justify-center gap-2 shadow"

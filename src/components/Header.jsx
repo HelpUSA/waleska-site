@@ -103,13 +103,13 @@ const Header = ({ lang, setLang, t }) => {
 
           {/* Botão WhatsApp Direct */}
           <a
-            href="https://wa.me/558399629962?text=Olá%20Waleska!%20Acessei%20seu%20site%20waleska.helpusbr.com."
+            href="https://wa.me/5583987708002?text=Olá%20Waleska!%20Acessei%20seu%20site%20waleska.helpusbr.com."
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-xl shadow-sm hover:shadow transition text-xs"
           >
             <FaWhatsapp className="text-base" />
-            <span>(83) 9962-9962</span>
+            <span>(83) 98770-8002</span>
           </a>
         </nav>
 
@@ -161,7 +161,7 @@ const Header = ({ lang, setLang, t }) => {
             <FaInstagram /> @imoveis.waleskasantos
           </a>
           <a
-            href="https://wa.me/558399629962?text=Olá%20Waleska!"
+            href="https://wa.me/5583987708002?text=Olá%20Waleska!"
             target="_blank"
             rel="noreferrer"
             className="w-full py-2.5 bg-emerald-600 text-white font-bold rounded-xl text-center flex items-center justify-center gap-2"

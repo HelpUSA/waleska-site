@@ -10,7 +10,7 @@ const ContatoForm = ({ t }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const text = `Olá Waleska! Meu nome é ${nome}.\nE-mail: ${email}\nTelefone: ${telefone}\nMensagem: ${mensagem}`;
-    const waUrl = `https://wa.me/558399629962?text=${encodeURIComponent(text)}`;
+    const waUrl = `https://wa.me/5583987708002?text=${encodeURIComponent(text)}`;
     window.open(waUrl, "_blank");
   };
 
@@ -48,8 +48,8 @@ const ContatoForm = ({ t }) => {
               </div>
               <div>
                 <p className="text-xs text-slate-400 font-bold uppercase">WhatsApp Direto</p>
-                <a href="https://wa.me/558399629962" target="_blank" rel="noreferrer" className="text-emerald-700 hover:underline">
-                  (83) 9962-9962
+                <a href="https://wa.me/5583987708002" target="_blank" rel="noreferrer" className="text-emerald-700 hover:underline font-mono">
+                  (83) 98770-8002
                 </a>
               </div>
             </div>

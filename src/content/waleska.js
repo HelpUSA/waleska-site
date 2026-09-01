@@ -324,8 +324,8 @@ const data = {
   especialidades: ["Compra & Venda", "Locação", "Avaliação Imobiliária"],
   resumo: "Atendimento imobiliário especializado por Waleska Santos (CRECI 9962-F PB / CNAI 32415).",
   contato: {
-    whatsapp: "+55 83 9962-9962",
-    whatsapp_link: "https://wa.me/558399629962",
+    whatsapp: "+55 83 98770-8002",
+    whatsapp_link: "https://wa.me/5583987708002",
     email: "contato@waleska.com.br",
     instagram: "https://www.instagram.com/imoveis.waleskasantos/"
   }
